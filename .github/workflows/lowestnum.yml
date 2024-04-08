@@ -1,0 +1,25 @@
+name: Lowest Number Python Testing
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Configure Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Run tests
+      run: |
+        python find_lowest_number.py test_data/test1_input.txt output.txt
+        diff output.txt test_data/test1_expected.txt
+        python find_lowest_number.py test_data/test2_input.txt output.txt
+        diff output.txt test_data/test2_expected.txt
+        python find_lowest_number.py test_data/test3_input.txt output.txt
+        diff output.txt test_data/test3_expected.txt
