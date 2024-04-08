@@ -15,7 +15,7 @@ jobs:
       with:
         python-version: '3.x'
         
-    - name: Convert line endings
+    - name: Remove windows style line endings (due to floats) using sed command
       run: |
         sed -i 's/\r$//' test_data/test1_expected.txt
         sed -i 's/\r$//' test_data/test2_expected.txt
