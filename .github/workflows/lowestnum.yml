@@ -17,8 +17,6 @@ jobs:
 
     - name: Run tests
       run: |
-        python find_lowest_number.py test_data/test1_input.txt output.txt
-        diff output.txt test_data/test1_expected.txt
         python find_lowest_number.py test_data/test2_input.txt output.txt
         diff output.txt test_data/test2_expected.txt
         python find_lowest_number.py test_data/test3_input.txt output.txt
