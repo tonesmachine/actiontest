@@ -14,6 +14,12 @@ jobs:
       uses: actions/setup-python@v5
       with:
         python-version: '3.x'
+        
+    - name: Convert line endings
+      run: |
+        sed -i 's/\r$//' test_data/test1_expected.txt
+        sed -i 's/\r$//' test_data/test2_expected.txt
+        sed -i 's/\r$//' test_data/test3_expected.txt
 
     - name: Run tests
       run: |
